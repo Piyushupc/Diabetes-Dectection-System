@@ -1,71 +1,49 @@
-# Diabetes Prediction Using Machine Learning
+# Diabetes Prediction — Machine Learning Learning Project
 
-A small educational machine-learning project that explores binary classification using the Pima Indians Diabetes Dataset and a Random Forest classifier.
+An educational classification project using the Pima Indians Diabetes dataset. The script demonstrates data preparation, visualization, Random Forest classification, and evaluation.
 
-> **Medical disclaimer:** This project is for learning and experimentation only. It is not a medical device, diagnostic tool, or substitute for advice from a qualified healthcare professional. Do not use its predictions to make healthcare decisions.
+> **Medical disclaimer:** This is a learning exercise, not a medical device or diagnostic tool. It must not be used to diagnose diabetes, rule it out, or guide treatment.
 
-## Features
+## Current workflow
 
 - Load the `diabetes.csv` dataset.
-- Perform basic data cleaning and exploratory visualization.
+- Clean selected values and visualize feature distributions and correlations.
+- Split the data into training and test sets.
 - Train a Random Forest classifier.
-- Evaluate predictions using accuracy, a confusion matrix, and a classification report.
+- Display accuracy, a confusion matrix, and a classification report.
 
-## Technology stack
+## Technology
 
-- Python
-- Pandas and NumPy
-- Matplotlib and Seaborn
-- scikit-learn
-
-## Project structure
-
-```text
-Main.py
-diabetes.csv
-README.md
-```
+Python, Pandas, NumPy, Matplotlib, Seaborn, and scikit-learn.
 
 ## Run locally
 
-Install dependencies:
-
 ```bash
-python -m pip install pandas numpy matplotlib seaborn scikit-learn
-```
-
-Run:
-
-```bash
+pip install pandas numpy matplotlib seaborn scikit-learn
 python Main.py
 ```
 
-## Evaluation
+The dataset file is expected at the path used by the script. Check that path if running from another working directory.
 
-The existing project documentation reports an accuracy of 85.71% and the following confusion matrix:
+## Results and limitations
+
+The existing README reports 85.71% accuracy and this confusion matrix for one run:
 
 ```text
 [[89, 11],
  [18, 36]]
 ```
 
-These are previously documented results, not independently reproduced in this documentation update. Re-run the project and record the exact split, random seed, preprocessing, and class-wise metrics before using the figure in a portfolio or report.
+These figures are dataset- and split-specific, not a guarantee of performance on other populations or clinical settings. Accuracy alone is insufficient for a health-related classifier. Report sensitivity/recall, specificity, precision, F1, ROC-AUC, calibration, and confidence intervals where possible.
 
-## Modeling considerations
-
-- Zero values in medical measurements can mean different things; do not automatically replace every zero without checking the feature definition.
-- Fit imputers and other preprocessing only on the training split.
-- Use stratified splitting and report precision, recall, F1, ROC-AUC, and a confusion matrix.
-- Check class imbalance and calibration.
-- The dataset has population and sampling limitations; results may not generalize to other populations.
+The dataset has clinically meaningful missing-value conventions. Replacing every zero with a mean can distort valid measurements and should not be done indiscriminately. Document which fields use zero as a missing-value code and fit imputers only on training data.
 
 ## Recommended improvements
 
-- Use a Pipeline and ColumnTransformer.
-- Add cross-validation and tests.
-- Document dataset provenance and license.
-- Add a reproducible training/evaluation script.
-- Keep the medical-use disclaimer visible.
+- Use a reproducible split and scikit-learn Pipeline.
+- Evaluate class imbalance and threshold trade-offs.
+- Add tests and document dataset provenance and license.
+- Clearly communicate limitations and prohibit clinical use.
 
 ## Author
 
