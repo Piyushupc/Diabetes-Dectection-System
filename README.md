@@ -1,63 +1,72 @@
-# 🩺 Diabetes Prediction System using Machine Learning
+# Diabetes Prediction Using Machine Learning
 
-This project predicts whether a person has diabetes based on various health parameters using machine learning techniques. It uses the **Pima Indians Diabetes Dataset** and implements data preprocessing, visualization, and classification using a **Random Forest Classifier**.
+A small educational machine-learning project that explores binary classification using the Pima Indians Diabetes Dataset and a Random Forest classifier.
 
----
+> **Medical disclaimer:** This project is for learning and experimentation only. It is not a medical device, diagnostic tool, or substitute for advice from a qualified healthcare professional. Do not use its predictions to make healthcare decisions.
 
-## 🚀 Features
-- Reads and cleans the dataset (`diabetes.csv`)
-- Replaces missing or zero values with mean values
-- Generates data visualizations (correlation heatmap and histograms)
-- Splits data into training and testing sets
-- Trains a **Random Forest Classifier**
-- Evaluates model performance using:
-  - Accuracy score
-  - Confusion matrix
-  - Classification report
+## Features
 
----
+- Load the `diabetes.csv` dataset.
+- Perform basic data cleaning and exploratory visualization.
+- Train a Random Forest classifier.
+- Evaluate predictions using accuracy, a confusion matrix, and a classification report.
 
-## 🧠 Technologies Used
-- **Python**
-- **Pandas**, **NumPy** – Data Handling
-- **Matplotlib**, **Seaborn** – Visualization
-- **Scikit-learn (sklearn)** – Model Building and Evaluation
+## Technology stack
 
----
+- Python
+- Pandas and NumPy
+- Matplotlib and Seaborn
+- scikit-learn
 
-## 📂 Project Structure
-📁 Diabetes-Prediction
-│
-├── 📄 Main.py # Main project script
-├── 📄 diabetes.csv # Dataset used for training and testing
-└── 📄 README.md # Project documentation
+## Project structure
+
+```text
+Main.py
+diabetes.csv
+README.md
+```
+
+## Run locally
 
 Install dependencies:
 
-pip install pandas numpy matplotlib seaborn scikit-learn
+```bash
+python -m pip install pandas numpy matplotlib seaborn scikit-learn
+```
 
+Run:
+
+```bash
 python Main.py
+```
 
-Model Accuracy: 85.71%
-Confusion Matrix:
-[[89 11]
- [18 36]]
+## Evaluation
 
- 🧩 Future Improvements
+The existing project documentation reports an accuracy of 85.71% and the following confusion matrix:
 
-Try other algorithms (Logistic Regression, SVM, XGBoost)
+```text
+[[89, 11],
+ [18, 36]]
+```
 
-Add a GUI or Flask web interface for user interaction
+These are previously documented results, not independently reproduced in this documentation update. Re-run the project and record the exact split, random seed, preprocessing, and class-wise metrics before using the figure in a portfolio or report.
 
-Perform hyperparameter tuning for better accuracy
+## Modeling considerations
 
+- Zero values in medical measurements can mean different things; do not automatically replace every zero without checking the feature definition.
+- Fit imputers and other preprocessing only on the training split.
+- Use stratified splitting and report precision, recall, F1, ROC-AUC, and a confusion matrix.
+- Check class imbalance and calibration.
+- The dataset has population and sampling limitations; results may not generalize to other populations.
 
-👨‍💻 Author
+## Recommended improvements
 
-Piyush Rai
-📧 [piyushrai2566@gmail.com]
-📍 MCA Student | Python & AI/ML Developer
+- Use a Pipeline and ColumnTransformer.
+- Add cross-validation and tests.
+- Document dataset provenance and license.
+- Add a reproducible training/evaluation script.
+- Keep the medical-use disclaimer visible.
 
+## Author
 
----
-
+Piyush Rai — [GitHub](https://github.com/Piyushupc)
