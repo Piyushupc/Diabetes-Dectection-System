@@ -1,63 +1,50 @@
-# 🩺 Diabetes Prediction System using Machine Learning
+# Diabetes Prediction — Machine Learning Learning Project
 
-This project predicts whether a person has diabetes based on various health parameters using machine learning techniques. It uses the **Pima Indians Diabetes Dataset** and implements data preprocessing, visualization, and classification using a **Random Forest Classifier**.
+An educational classification project using the Pima Indians Diabetes dataset. The script demonstrates data preparation, visualization, Random Forest classification, and evaluation.
 
----
+> **Medical disclaimer:** This is a learning exercise, not a medical device or diagnostic tool. It must not be used to diagnose diabetes, rule it out, or guide treatment.
 
-## 🚀 Features
-- Reads and cleans the dataset (`diabetes.csv`)
-- Replaces missing or zero values with mean values
-- Generates data visualizations (correlation heatmap and histograms)
-- Splits data into training and testing sets
-- Trains a **Random Forest Classifier**
-- Evaluates model performance using:
-  - Accuracy score
-  - Confusion matrix
-  - Classification report
+## Current workflow
 
----
+- Load the `diabetes.csv` dataset.
+- Clean selected values and visualize feature distributions and correlations.
+- Split the data into training and test sets.
+- Train a Random Forest classifier.
+- Display accuracy, a confusion matrix, and a classification report.
 
-## 🧠 Technologies Used
-- **Python**
-- **Pandas**, **NumPy** – Data Handling
-- **Matplotlib**, **Seaborn** – Visualization
-- **Scikit-learn (sklearn)** – Model Building and Evaluation
+## Technology
 
----
+Python, Pandas, NumPy, Matplotlib, Seaborn, and scikit-learn.
 
-## 📂 Project Structure
-📁 Diabetes-Prediction
-│
-├── 📄 Main.py # Main project script
-├── 📄 diabetes.csv # Dataset used for training and testing
-└── 📄 README.md # Project documentation
+## Run locally
 
-Install dependencies:
-
+```bash
 pip install pandas numpy matplotlib seaborn scikit-learn
-
 python Main.py
+```
 
-Model Accuracy: 85.71%
-Confusion Matrix:
-[[89 11]
- [18 36]]
+The dataset file is expected at the path used by the script. Check that path if running from another working directory.
 
- 🧩 Future Improvements
+## Results and limitations
 
-Try other algorithms (Logistic Regression, SVM, XGBoost)
+The existing README reports 85.71% accuracy and this confusion matrix for one run:
 
-Add a GUI or Flask web interface for user interaction
+```text
+[[89, 11],
+ [18, 36]]
+```
 
-Perform hyperparameter tuning for better accuracy
+These figures are dataset- and split-specific, not a guarantee of performance on other populations or clinical settings. Accuracy alone is insufficient for a health-related classifier. Report sensitivity/recall, specificity, precision, F1, ROC-AUC, calibration, and confidence intervals where possible.
 
+The dataset has clinically meaningful missing-value conventions. Replacing every zero with a mean can distort valid measurements and should not be done indiscriminately. Document which fields use zero as a missing-value code and fit imputers only on training data.
 
-👨‍💻 Author
+## Recommended improvements
 
-Piyush Rai
-📧 [piyushrai2566@gmail.com]
-📍 MCA Student | Python & AI/ML Developer
+- Use a reproducible split and scikit-learn Pipeline.
+- Evaluate class imbalance and threshold trade-offs.
+- Add tests and document dataset provenance and license.
+- Clearly communicate limitations and prohibit clinical use.
 
+## Author
 
----
-
+Piyush Rai — [GitHub](https://github.com/Piyushupc)
